@@ -1,0 +1,27 @@
+{%extends 'photo_app/base.html' %}
+
+{% block content %}}
+
+ <div class="container mt-3">
+    <h1>Upload Pictures</h1>
+
+
+<form action="{% url 'photo_app:upload' %}" method='post' enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label  class="form-label">Description
+      {{ form.description }}
+      </label>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Upload
+      {{ form.path }}
+      </label>
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Send</button>
+        <button type="reset" class="btn btn-primary">Reset</button>
+    </div>
+</form>
+</div>
+{% endblock %}
