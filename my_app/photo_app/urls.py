@@ -10,5 +10,5 @@ urlpatterns = [
     path('images/', views.view_pictures, name='pictures'),
     path('upload/', views.upload, name='upload'),
     path('images/edit/<int:img_id>', views.edit, name='edit'),
-    path('upload/remove/<int:img_id>', views.remove, name='remove'),
+    path('images/remove/<int:img_id>', views.remove, name='remove'),
 ]

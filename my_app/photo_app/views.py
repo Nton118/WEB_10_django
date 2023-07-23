@@ -38,7 +38,7 @@ def edit(request, img_id):
         return redirect(to="photo_app:pictures")
 
     pic = Picture.objects.filter(pk=img_id, user=request.user).first()
-    return render(request, "photo_app/change.html", context={"title": "Change description"})
+    return render(request, "photo_app/change.html", context={"title": "Change description", "pic": pic})
 
 
 @login_required
